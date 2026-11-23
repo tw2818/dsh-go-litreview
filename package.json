@@ -1,0 +1,37 @@
+{
+  "name": "dsh-go-litreview",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "lib/index.js",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "engines": {
+    "dsh": ">=0.2.2-rc.1 <0.3.0-0"
+  },
+  "dshGo": {
+    "v": 1,
+    "title": { "zh": "文献检索", "en": "Literature" },
+    "icon": "book",
+    "minApp": "1.3.0",
+    "contributes": {
+      "composer.actions": [
+        { "id": "open-litreview", "label": { "zh": "文献", "en": "Papers" }, "icon": "book" }
+      ],
+      "composer.strip": [
+        { "id": "litreview-state", "icon": "book", "panel": "litreview" }
+      ],
+      "panels": [
+        {
+          "id": "litreview",
+          "title": { "zh": "文献检索", "en": "Literature" },
+          "icon": "book",
+          "placement": ["session.tab", "chat.panel", "features"]
+        }
+      ]
+    }
+  }
+}
